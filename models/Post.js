@@ -19,13 +19,6 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    guest_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    has_nuts: {
-      type: DataTypes.BOOLEAN,
-    },
   },
   {
     sequelize,

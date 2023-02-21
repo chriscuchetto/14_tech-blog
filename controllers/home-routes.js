@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Post = require('../models/Post');
+const User = require('../models/User');
 
 // route to get all Posts
 router.get('/', async (req, res) => {
@@ -10,6 +11,14 @@ router.get('/', async (req, res) => {
     res.render('all', { posts });
   });
 
-
+  router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('login');
+  });
+  
 
 module.exports = router;

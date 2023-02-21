@@ -23,11 +23,11 @@ router.get('/', async (req, res) => {
 
   router.get('/dashboard', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+      res.render('dashboard');
       return;
     }
   
-    res.render('dashboard');
+    res.redirect('/');
   });
   
 
